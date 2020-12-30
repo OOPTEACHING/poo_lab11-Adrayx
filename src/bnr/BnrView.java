@@ -5,14 +5,14 @@ import javax.swing.*;
 import java.awt.event.*;
 
 public class BnrView extends JFrame {
-    private JTextField m_userInputTf = new JTextField(20);
-    private JTextField m_totalTf = new JTextField(20);
-    private String[] currency = { "EUR", "RON", "USD"};
-    private JComboBox m_fromCombo = new JComboBox(currency);
-    private JComboBox m_toCombo = new JComboBox(currency);
-    private JButton m_convertButton = new JButton(">>");
+    private final JTextField m_userInputTf = new JTextField(20);
+    private final JTextField m_totalTf = new JTextField(20);
+    private final String[] currency = { "EUR", "RON", "USD"};
+    private final JComboBox<String> m_fromCombo = new JComboBox<>(currency);
+    private final JComboBox<String> m_toCombo = new JComboBox<>(currency);
+    private final JButton m_convertButton = new JButton(">>");
 
-    private BnrModel m_model;
+    private final BnrModel m_model;
 
     public BnrView(BnrModel model)
     {
@@ -55,7 +55,6 @@ public class BnrView extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public void reset() { m_totalTf.setText(""); }
 
     public String getUserInput(){return m_userInputTf.getText();}
 

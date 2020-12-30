@@ -1,13 +1,12 @@
 package bnr;
 
 public class BnrModel {
-    static final String INITIAL_VALUE = "1";
 
     private float m_total;
 
-    private final float eur = 1;
-    private final float ron = 4.8649f;
-    private final float usd = 1.22f;
+    private static final float eur = 1;
+    private static final float ron = 4.8649f;
+    private static final float usd = 1.22f;
 
     public BnrModel()
     {
@@ -21,7 +20,7 @@ public class BnrModel {
 
     public void convert(String operand, String from, String to)
     {
-        m_total = Float.valueOf(operand);
+        m_total = Float.parseFloat(operand);
         switch(from)
         {
             case "RON":
@@ -56,11 +55,6 @@ public class BnrModel {
                 m_total = m_total * ron;
             }
         }
-    }
-
-    public void setValue(float value)
-    {
-        m_total = value;
     }
 
     public String getValue() {
