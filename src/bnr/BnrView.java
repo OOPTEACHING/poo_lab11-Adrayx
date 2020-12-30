@@ -3,7 +3,6 @@ package bnr;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
-import java.net.http.HttpResponse;
 
 public class BnrView extends JFrame {
     private JTextField m_userInputTf = new JTextField(20);
